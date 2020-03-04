@@ -12,6 +12,7 @@
   <% lineItem_quantity =  LineItem.find(@order.id).quantity %>
   <% lineItem_price = LineItem.find(@order.id).item_price_cents %>
   <% lineItem_total = LineItem.find(@order.id).total_price_cents.inspect %>
+  <% order_email =  Order.find(@order.id).email %>
 
 
 
@@ -47,7 +48,7 @@
     </tr>
     </tfoot>
     </table>
-
+    <h3> Thank you for your purchase <%= order_email %> !</h3>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
