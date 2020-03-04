@@ -4,6 +4,7 @@
   </header>
 
   <div class="order-summary jumbotron">
+
   <% lineItem_id = LineItem.find(@order.id).product_id %>
   <% lineItem_name = Product.find(lineItem_id).name %>
   <% lineItem_description = Product.find(lineItem_id).description %>
@@ -18,14 +19,15 @@
   <table class="table table-bordered">
   <thead>
   <tr>
-  <th >Product Name</th>
+  <th colspan='2' >Product Name</th>
   <th>Description</th>
   <th>Quantity</th>
   <th>Price</th>
   </tr>
   </thead>
   <tbody>
-    
+
+    <th><%= image_tag lineItem_image.tiny %> </th>
     <th><%= lineItem_name %> </th>
     <th><%= lineItem_description %> </th>
     <th><%= lineItem_quantity %> </th>
@@ -36,7 +38,7 @@
     </tbody>
     <tfoot>
     <tr>
-    <th colspan="3">
+    <th colspan="4">
     TOTAL:
     </th>
     <th>
