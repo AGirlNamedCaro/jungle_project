@@ -5,14 +5,18 @@
 
   <div class="order-summary jumbotron">
 
-  <% lineItem_id = LineItem.find(@order.id).product_id %>
+
+  
+  <% order_email =  Order.find(@order.id).email %>
+  <% lineItem_total = Order.find(@order.id).total_cents %>
+  <%  @order.line_items.each do | item |  %>
+    
+  <% lineItem_id = LineItem.find(item.id).product_id %>
   <% lineItem_name = Product.find(lineItem_id).name %>
   <% lineItem_description = Product.find(lineItem_id).description %>
   <% lineItem_image = Product.find(lineItem_id).image %>
-  <% lineItem_quantity =  LineItem.find(@order.id).quantity %>
-  <% lineItem_price = LineItem.find(@order.id).item_price_cents %>
-  <% lineItem_total = LineItem.find(@order.id).total_price_cents.inspect %>
-  <% order_email =  Order.find(@order.id).email %>
+  <% lineItem_quantity =  LineItem.find(item.id).quantity %>
+  <% lineItem_price = LineItem.find(item.id).item_price_cents %>
 
 
 
@@ -28,15 +32,16 @@
   </thead>
   <tbody>
 
+
     <th><%= image_tag lineItem_image.tiny %> </th>
     <th><%= lineItem_name %> </th>
     <th><%= lineItem_description %> </th>
     <th><%= lineItem_quantity %> </th>
-    <th><%= humanized_money_with_symbol lineItem_price %> </th>
-
-
+    <th><%=  humanized_money_with_symbol lineItem_price / 100.0 %> </th>
+    
     
     </tbody>
+    <% end %>
     <tfoot>
     <tr>
     <th colspan="4">
