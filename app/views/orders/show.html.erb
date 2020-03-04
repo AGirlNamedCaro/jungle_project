@@ -9,6 +9,17 @@
   
   <% order_email =  Order.find(@order.id).email %>
   <% lineItem_total = Order.find(@order.id).total_cents %>
+  
+  <table class="table table-bordered">
+  <thead>
+  <tr>
+  <th colspan='2' >Product Name</th>
+  <th>Description</th>
+  <th>Quantity</th>
+  <th>Price</th>
+  </tr>
+  </thead>
+
   <%  @order.line_items.each do | item |  %>
     
   <% lineItem_id = LineItem.find(item.id).product_id %>
@@ -21,15 +32,6 @@
 
 
 
-  <table class="table table-bordered">
-  <thead>
-  <tr>
-  <th colspan='2' >Product Name</th>
-  <th>Description</th>
-  <th>Quantity</th>
-  <th>Price</th>
-  </tr>
-  </thead>
   <tbody>
 
 
