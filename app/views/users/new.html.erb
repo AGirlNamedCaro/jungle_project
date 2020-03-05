@@ -1,11 +1,22 @@
+
+
 <h1> Sign up! </h1>
 
+<form>
+<div class="form-group input-sm ">
+
+<div class="col-xs-8 ">
 <%= form_for :user, url: '/users' do |f| %>
-
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
-
+  <b>Name:</b> <%= f.text_field :name , class:"form-control " %>
+  <b>Email:</b> <%= f.text_field :email , class:"form-control " %>
+  <b>Password:</b> <%= f.password_field :password , class:"form-control " %>
+  <b>Password Confirmation:</b> <%= f.password_field :password_confirmation , class:"form-control " %>
+  <%= f.submit "Submit",  class: 'btn btn-success' %>
+  
   <% end %>
+
+  </div>
+
+  </div>
+
+  </form>
