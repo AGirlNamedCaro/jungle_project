@@ -40,15 +40,6 @@ RSpec.describe User, type: :model do
 
   end
 
-  describe '.authenticate_with_credentials' do
-
-    @user = User.create(email: "test@test.com", name: "User1", password: "12345", password_confirmation: "12345")
-    it 'Validates user authentication' do
-     @session = @user.create.authenticate_with_credentials(email:  "test@test.com", password: "12345" )
-
-    expect(@session).to eql(@user)
-    end
-  end
 end
 
 
