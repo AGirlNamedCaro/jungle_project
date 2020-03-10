@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
     it 'Validates user authentication' do
      @session = @user.create.authenticate_with_credentials(email:  "test@test.com", password: "12345" )
 
-    @session.should equal(@user)
+    expect(@session).to eql(@user)
     end
   end
 end

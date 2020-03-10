@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
 
   has_secure_password
-
+  
   def create
-    if user = User.authenticate_with_credentials(params[:email], params[:password])
-     @user = User.new
+    if @user = User.authenticate_with_credentials(params[:email], params[:password])
+      
     else
       nil
     end
@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :name, presence: true
   validates :password, :length => { :minimum => 5}
-  validates .authenticate_with_credentials
+  validates :authenticate_with_credentials, presence: true
 
 
 end
