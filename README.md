@@ -2,8 +2,12 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
-## 
 
+!["Home page view - Jungle"](https://github.com/AGirlNamedCaro/jungle_project/blob/master/img/Screen%20Shot%202020-03-11%20at%209.39.31%20AM.png?raw=true)
+
+!["Product detail page"](https://github.com/AGirlNamedCaro/jungle_project/blob/master/img/Screen%20Shot%202020-03-11%20at%209.39.41%20AM.png?raw=true)
+
+!["My cart page"](https://github.com/AGirlNamedCaro/jungle_project/blob/master/img/Screen%20Shot%202020-03-11%20at%209.39.58%20AM.png?raw=true)
 
 ## Setup
 
